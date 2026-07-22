@@ -12,6 +12,7 @@ En este ejemplo buscamos valores negativos en:
 - Cost
 - Impressions
 - Clicks
+Se buscan métricas negativas. Los ceros pueden ser válidos
 */
 
 SELECT *
