@@ -27,3 +27,9 @@ Casos de análisis orientados a responder preguntas de negocio utilizando SQL.
 ### Insight principal
 
 El segmento **High cost / Low performance** permite identificar campañas con alta inversión y rendimiento inferior al benchmark, convirtiéndolas en candidatas prioritarias para revisión.
+
+## Casos
+
+| Caso | Descripción |
+|---|---|
+| `01_investment_efficiency.sql` | Segmenta campañas según nivel de inversión y rendimiento frente al benchmark. |
