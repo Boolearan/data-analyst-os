@@ -1,3 +1,21 @@
+/*
+===========================================================
+Tema 02 - Business Analysis with SQL
+Caso 01 - Eficiencia de inversión
+===========================================================
+
+Pregunta de negocio:
+¿Dónde estamos invirtiendo mucho sin obtener un
+rendimiento proporcional?
+
+Enfoque:
+1. Agregar métricas a nivel campaña.
+2. Excluir campañas con poco volumen.
+3. Calcular CTR, CPC y CPM.
+4. Calcular benchmarks globales.
+5. Segmentar campañas según inversión y rendimiento.
+*/
+
 WITH
   base AS (
     SELECT
