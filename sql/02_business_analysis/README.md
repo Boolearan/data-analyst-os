@@ -34,3 +34,4 @@ El segmento **High cost / Low performance** permite identificar campañas con al
 |---|---|
 | `01_investment_efficiency.sql` | Segmenta campañas según nivel de inversión y rendimiento frente al benchmark. |
 | `02_weekly_performance_drop.sql` | Detecta campañas cuyo rendimiento empeora frente a la semana anterior mediante CTR y CPC. |
+| `03_investment_concentration.sql` | Analiza cómo se distribuye la inversión entre campañas y su nivel de concentración. |
