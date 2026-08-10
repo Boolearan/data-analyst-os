@@ -15,6 +15,18 @@ Enfoque:
 4. Calcular la inversión acumulada.
 5. Analizar qué porcentaje del gasto se concentra
    progresivamente en las campañas principales.
+
+**Conclusión**
+
+La inversión analizada no presenta una concentración fuerte en unas pocas campañas.
+
+Las campañas con mayor inversión representan individualmente una proporción reducida del total y es necesario acumular un número elevado de campañas para alcanzar aproximadamente el 80% de la inversión.
+
+Esto indica que la inversión está relativamente distribuida entre muchas campañas.
+
+**Conceptos SQL**
+
+`RANK`, `SUM() OVER()`, window functions, suma acumulada, `SAFE_DIVIDE` y análisis de concentración.
 */
 
 WITH
