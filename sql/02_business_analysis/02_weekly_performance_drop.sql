@@ -8,10 +8,22 @@ Pregunta de negocio:
 ¿Qué campañas han empeorado significativamente respecto
 a la semana anterior?
 
-Criterios:
-- CTR cae más de un 20%
-- CPC aumenta más de un 25%
-- Solo se comparan semanas consecutivas
+**Lógica**
+
+- Agregación semanal por campaña.
+- Comparación contra la semana anterior mediante `LAG()`.
+- Validación de semanas consecutivas.
+- Detección de deterioro cuando:
+  - CTR cae más de un 20%.
+  - CPC aumenta más de un 25%.
+
+**Conclusión**
+
+El análisis permite detectar automáticamente campañas con deterioro reciente y priorizar su revisión.
+
+**Conceptos SQL**
+
+`DATE_TRUNC`, `LAG`, `PARTITION BY`, `DATE_DIFF`, variaciones porcentuales y `CASE`.
 */
 
 WITH
