@@ -2,6 +2,8 @@
 
 Casos de análisis orientados a responder preguntas de negocio utilizando SQL.
 
+---
+
 ## Caso 01 - Eficiencia de inversión
 
 ### Pregunta de negocio
@@ -17,16 +19,68 @@ Casos de análisis orientados a responder preguntas de negocio utilizando SQL.
 - Comparar cada campaña con los benchmarks.
 - Segmentar las campañas según inversión y rendimiento.
 
-### Segmentos
+### Conclusión
 
-- High cost / High performance
-- High cost / Low performance
-- Low cost / High performance
-- Low cost / Low performance
+La segmentación permite identificar campañas con alta inversión y rendimiento inferior al benchmark (`High cost / Low performance`), convirtiéndolas en candidatas prioritarias para revisión.
 
-### Insight principal
+### Conceptos SQL
 
-El segmento **High cost / Low performance** permite identificar campañas con alta inversión y rendimiento inferior al benchmark, convirtiéndolas en candidatas prioritarias para revisión.
+`CTEs`, `SAFE_DIVIDE`, agregaciones, `AVG() OVER()`, `CASE` y benchmarks.
+
+---
+
+## Caso 02 - Weekly Performance Drop
+
+### Pregunta de negocio
+
+¿Qué campañas han empeorado significativamente respecto a la semana anterior?
+
+### Enfoque
+
+- Agregar los resultados por semana y campaña.
+- Calcular CTR y CPC semanales.
+- Comparar cada semana con la anterior mediante `LAG()`.
+- Validar que las semanas comparadas sean consecutivas.
+- Calcular la variación porcentual de CTR y CPC.
+- Detectar deterioro cuando el CTR cae más de un 20% o el CPC aumenta más de un 25%.
+
+### Conclusión
+
+El análisis permite detectar automáticamente campañas con deterioro reciente y priorizar su revisión.
+
+### Conceptos SQL
+
+`DATE_TRUNC`, `LAG`, `PARTITION BY`, `DATE_DIFF`, variaciones porcentuales, `SAFE_DIVIDE` y `CASE`.
+
+---
+
+## Caso 03 - Investment Concentration
+
+### Pregunta de negocio
+
+¿Está la inversión concentrada en unas pocas campañas o distribuida entre muchas?
+
+### Enfoque
+
+- Agregar la inversión por campaña.
+- Ordenar las campañas de mayor a menor inversión.
+- Calcular el peso de cada campaña sobre la inversión total.
+- Calcular la inversión acumulada.
+- Analizar el porcentaje acumulado para estudiar la concentración.
+
+### Conclusión
+
+La inversión analizada no presenta una concentración fuerte en unas pocas campañas.
+
+Las campañas principales representan individualmente una proporción reducida del total y es necesario acumular un número elevado de campañas para alcanzar aproximadamente el 80% de la inversión.
+
+Esto indica que la inversión está relativamente distribuida entre muchas campañas.
+
+### Conceptos SQL
+
+`RANK`, `SUM() OVER()`, window functions, suma acumulada y `SAFE_DIVIDE`.
+
+---
 
 ## Casos
 
