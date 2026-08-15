@@ -82,6 +82,33 @@ Esto indica que la inversión está relativamente distribuida entre muchas campa
 
 ---
 
+## Caso 04 - Scalable Campaigns
+
+### Pregunta de negocio
+
+¿Qué campañas están funcionando bien, mantienen ese rendimiento en el tiempo y podrían ser candidatas a recibir más inversión?
+
+### Enfoque
+
+- Agregar los resultados por campaña y semana.
+- Calcular el CTR de cada campaña.
+- Comparar coste y CTR con los benchmarks de cada semana.
+- Identificar campañas con coste inferior a la media y CTR superior a la media.
+- Validar que las semanas analizadas sean realmente consecutivas.
+- Comprobar que la campaña cumple los criterios durante al menos 3 semanas consecutivas.
+
+### Conclusión
+
+El análisis permite identificar campañas que combinan un rendimiento superior al benchmark con una inversión relativamente baja y que, además, mantienen este comportamiento durante varias semanas consecutivas.
+
+Estas campañas pueden considerarse candidatas para evaluar un posible aumento de inversión, evitando tomar decisiones basadas únicamente en buenos resultados puntuales.
+
+### Conceptos SQL
+
+`CTEs`, `AVG() OVER()`, `PARTITION BY`, `LAG`, `DATE_DIFF`, `CASE`, benchmarks semanales y análisis de secuencias temporales.
+
+---
+
 ## Casos
 
 | Caso | Descripción |
@@ -89,3 +116,4 @@ Esto indica que la inversión está relativamente distribuida entre muchas campa
 | `01_investment_efficiency.sql` | Segmenta campañas según nivel de inversión y rendimiento frente al benchmark. |
 | `02_weekly_performance_drop.sql` | Detecta campañas cuyo rendimiento empeora frente a la semana anterior mediante CTR y CPC. |
 | `03_investment_concentration.sql` | Analiza cómo se distribuye la inversión entre campañas y su nivel de concentración. |
+| `04_scalable_campaigns.sql` | Identifica campañas con buen rendimiento sostenido y potencial para recibir mayor inversión. |
